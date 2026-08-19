@@ -50,7 +50,7 @@ export function CoberturaMonitoramento() {
     const usinasComParado = new Set<string>();
     const usinasComSemComunicacao = new Set<string>();
     for (const evento of eventosAbertos ?? []) {
-      const usinaId = (evento.dispositivo as { usina_id: string } | null)?.usina_id;
+      const usinaId = (evento.dispositivo as unknown as { usina_id: string } | null)?.usina_id;
       if (!usinaId) continue;
       if (evento.estado === "parado") usinasComParado.add(usinaId);
       if (evento.estado === "sem_comunicacao") usinasComSemComunicacao.add(usinaId);
