@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-fundo text-tinta antialiased font-sans;
+  font-variant-numeric: tabular-nums;
+}
+
+a {
+  @apply text-teal;
+}
+a:hover {
+  @apply text-teal-hover underline;
+}
+
+@layer components {
+  .campo {
+    @apply w-full rounded-controle border-fina border-borda-forte px-3 py-1.5 text-sm text-tinta focus:border-teal focus:outline-none;
+  }
+  .cartao {
+    @apply rounded-cartao border-fina border-borda bg-white shadow-[0_1px_2px_rgba(18,35,43,0.04)];
+  }
+  .botao-primario {
+    @apply rounded-controle bg-laranja px-4 py-2 text-sm font-semibold text-white shadow-[0_1px_2px_rgba(232,82,10,0.28)] hover:bg-laranja-hover disabled:opacity-60;
+  }
+  .botao-secundario {
+    @apply rounded-controle border border-borda-forte bg-white px-4 py-2 text-sm font-medium text-tinta-suave shadow-[0_1px_1px_rgba(18,35,43,0.04)] hover:bg-fundo disabled:opacity-60;
+  }
+}
